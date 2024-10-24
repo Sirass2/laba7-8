@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slack</title>
+    <style>
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            font-family: 'Inter', sans-serif;
+            margin-left: 30px;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-right: 40px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-right: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: purple;
+        }
+
+        .search-signin {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-left: auto;
+        }
+
+        .search {
+            cursor: pointer;
+        }
+
+        .search img {
+            height: 20px;
+        }
+
+        .signin {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 16px;
+            border: 2px solid purple;
+            border-radius: 5px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .talk-to-sales {
+            background-color: white;
+            color: purple;
+            border: 2px solid purple;
+        }
+
+        .talk-to-sales:hover {
+            border-width: 3px;
+        }
+
+        .get-started {
+            background-color: #611F69;
+            color: white;
+            border: 2px solid #611F69; /* Отдельная обводка для get-started */
+        }
+
+        .get-started-large {
+            padding: 16px 32px;
+            font-size: 18px;
+        }
+
+        .get-started:hover {
+            background-color: #4e164f;
+        }
+
+        .gif-container {
+            margin: 60px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .gif-container img {
+            width: 1000px;
+            height: auto;
+        }
+
+        .info-text {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 20px;
+            color: black;
+        }
+
+        .images {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 57%;
+            flex-wrap: wrap;
+        }
+
+        .images img {
+            padding: 10px;
+            height: 30px;
+            transition: height 0.3s;
+        }
+
+        #nasa, #target {
+            height: 40px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 60px;
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .search-signin {
+                margin-left: 100px;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .header {
+                margin-left: 20px;
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-left: 10px;
+            }
+
+            .search-signin {
+                margin-left: 0;
+                margin-top: 10px;
+                justify-content: flex-start;
+            }
+
+            .buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .images {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .images img {
+                height: 25px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .nav-links {
+                display: none;
+            }
+
+            .signin {
+                display: none;
+            }
+
+            .buttons {
+                display: none;
+            }
+
+            .info-text {
+                font-size: 18px;
+            }
+
+            .gif-container img {
+                width: 100%;
+                max-width: 600px;
+            }
+
+            .images {
+                justify-content: center;
+            }
+
+            .video-container {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+            }
+
+            .video-container img {
+                width: 100%;
+                max-width: 340px;
+                height: 100%;
+                max-height: 290px;
+            }
+
+            .search {
+                position: absolute;
+                top: 10px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="https://a.slack-edge.com/3d92b39/marketing/img/nav/slack-salesforce-logo-nav-black.png" alt="Logo">
+        </div>
+
+        <div class="nav-links">
+            <a href="#">Features</a>
+            <a href="#">Solutions</a>
+            <a href="#">Enterprise</a>
+            <a href="#">Resources</a>
+            <a href="#">Pricing</a>
+        </div>
+
+        <div class="search-signin">
+            <div class="search">
+                <img src="https://cdn-icons-png.flaticon.com/128/54/54481.png" alt="Search" width="20">
+            </div>
+            <a href="#" class="signin">Sign in</a>
+            <div class="buttons">
+                <div class="button talk-to-sales">
+                    <span>TALK TO SALES</span>
+                </div>
+                <div class="button get-started">
+                    <span>GET STARTED</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gif-container">
+        <img src="./1.gif" alt="Where work happens">
+        <div class="button-container">
+            <div class="button get-started get-started-large">
+                <span>GET STARTED</span>
+            </div>
+        </div>
+        <div class="info-text">
+            <strong>Slack is free to try</strong> for as long as you’d like 
+        </div>
+    </div>
+
+    <div class="image-container">
+        <div class="images">
+            <img src="https://a.slack-edge.com/a4c4a15/marketing/img/homepage/true-prospects/revamp-exp/logos/logo-airbnb-small.png" alt="" id="airbnb">
+            <img src="https://a.slack-edge.com/a4c4a15/marketing/img/homepage/true-prospects/revamp-exp/logos/logo-nasa-small.png" alt="" id="nasa">
+            <img src="https://a.slack-edge.com/a4c4a15/marketing/img/homepage/true-prospects/revamp-exp/logos/logo-uber-small.png" alt="" id="uber">
+            <img src="https://a.slack-edge.com/a4c4a15/marketing/img/homepage/true-prospects/revamp-exp/logos/logo-target-small.png" alt="" id="target">
+            <img src="https://a.slack-edge.com/a4c4a15/marketing/img/homepage/true-prospects/revamp-exp/logos/logo-nyt-small.png" alt="">
+            <img src="https://a.slack-edge.com/a4c4a15/marketing/img/homepage/true-prospects/revamp-exp/logos/logo-etsy-small.png" alt="">
+        </div>
+    </div>
+    <div class="video-container">
+        <img src="./2.gif" alt="Big Image" style="width: 900px; height: 544px;">
+    </div>
+</body>
+</html>
